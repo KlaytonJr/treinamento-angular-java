@@ -1,2 +1,1 @@
 # treinamento-angular-java
-.
