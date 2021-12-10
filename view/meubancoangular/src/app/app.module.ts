@@ -6,16 +6,19 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ExtratoComponent } from './pages/extrato/extrato.component';
-import { HomeComponent } from './pages/home/home.component';
 import { SaqueComponent } from './pages/saque/saque.component';
 import { DepositoComponent } from './pages/deposito/deposito.component';
-import { EstudoComponent } from './components/estudo/estudo.component';
-import { InputComponent } from './components/input/input.component';
-import { ButtonComponent } from './components/button/button.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LabelInputComponent } from './components/label-input/label-input.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { ButtonComponent } from './components/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClientesComponent } from './pages/clientes/clientes.component';
-import { CadastrarClientesComponent } from './pages/clientes/cadastrar-clientes/cadastrar-clientes.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ContasComponent } from './pages/contas/contas.component';
+import { CadastrarEditarClienteComponent } from './pages/clientes/cadastrar-editar-cliente/cadastrar-editar-cliente.component';
+import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
+import { CadastrarEditarContaComponent } from './pages/contas/cadastrar-editar-conta/cadastrar-editar-conta.component'
 
 @NgModule({
   declarations: [
@@ -23,21 +26,24 @@ import { CadastrarClientesComponent } from './pages/clientes/cadastrar-clientes/
     HeaderComponent,
     FooterComponent,
     ExtratoComponent,
-    HomeComponent,
     SaqueComponent,
     DepositoComponent,
-    EstudoComponent,
-    InputComponent,
-    ButtonComponent,
+    HomeComponent,
+    LabelInputComponent,
     CheckboxComponent,
+    ButtonComponent,
     ClientesComponent,
-    CadastrarClientesComponent
+    ContasComponent,
+    CadastrarEditarClienteComponent,
+    TransferenciaComponent,
+    CadastrarEditarContaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

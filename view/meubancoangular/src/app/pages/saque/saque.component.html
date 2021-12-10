@@ -1,16 +1,28 @@
-<h1>Saque</h1>
-<form>
+<h1 class="mt-5 mb-4">Saque</h1>
+
+
+<form [formGroup]="formGroup" class="mb-3" (ngSubmit)="sacar()">
   <div class="row">
     <div class="col">
-      <app-input type="number" label="Agência"></app-input>
+      <label for="exampleFormControlInput1" class="form-label">Conta</label>
+      <input type="text" class="form-control" formControlName="numeroConta">
+      <small class="text-danger mb-2" *ngIf="formGroup.get('numeroConta')?.errors &&
+      formGroup.get('numeroConta')?.hasError('required')">Campo obrigatório</small>
     </div>
     <div class="col">
-      <app-input type="number" label="Conta"></app-input>
+      <label for="exampleFormControlInput1" class="form-label">Agência</label>
+      <input type="text" class="form-control" formControlName="agencia">
+      <small class="text-danger mb-2" *ngIf="formGroup.get('agencia')?.errors &&
+      formGroup.get('agencia')?.hasError('required')">Campo obrigatório</small>
     </div>
     <div class="col">
-      <app-input type="number" label="Valor"></app-input>
+      <label for="exampleFormControlInput1" class="form-label">Valor</label>
+      <input type="text" class="form-control" formControlName="valor">
+      <small class="text-danger mb-2" *ngIf="formGroup.get('valor')?.errors &&
+      formGroup.get('valor')?.hasError('required')">Campo obrigatório</small>
     </div>
   </div>
-  <app-checkbox label="Aceito os termos"></app-checkbox>
-  <app-button label="Enviar"></app-button>
+  <div class="d-flex justify-content-center">
+    <button [disabled]="!formGroup.valid" type="submit" class=" mt-4 btn btn-dark" titulo="Cadastrar"> Sacar </button>
+  </div>
 </form>
